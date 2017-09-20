@@ -15,46 +15,39 @@ class School:
 class Eit(School):
 
     def __init__(self, name, nationality, funfact):
-        School.__init__(self, name, nationality)
+        super().__init__(name, nationality)
         self.funfact = funfact
-        self.funfact = input("What's your funfact?\n")
 
-    def GetSchool(self):
+    def GetEIT(self):
+        self.funfact = input("What's your funfact?\n")
         return self.Name() + " -> " + self.Nationality() + " -> " + self.funfact
 
 
 class Fellows(School):
 
     def __init__(self, name, nationality, happiness, eat, teach):
-        School.__init__(self, name, nationality)
+        super().__init__(name, nationality)
         self.happiness = happiness
         self.eat = eat
         self.teach = teach
 
     def HasEaten(self):
-    	self.eat = input("Has fellow eaten?")
+    	self.eat = input("Has fellow eaten? \n")
     	if self.eat == "Yes":
-    		# self.happiness = True
-    		print("Fellow is happy")
+    		self.happiness = True
     	elif self.eat == "No":
-    		# self.happiness = False
-    		("Fellow is not happy")
-    	else:
-    		print("Type Yes/No")
+    		self.happiness = False
 
-
-    	# if self.happiness == True:
-    	# 	print("Fellow is happy")
-    	# else:
-    	# 	("Fellow is not happy")
+    	return self.happiness
 
     def GetFellows(self):
         return self.Name() + " -> " + self.Nationality() + " -> " + self.happiness + " -> " + self.eat + " -> " + self.teach
 
-Downstairs_EIT = Eit("Eyram", "Ghana", "Andrew == Tech")
-All_Fellows = Fellows("Francis", "Ghana", "1000", "Banku", "True")
 
-# Downstairs_EIT.SayFunfact()
+class Person():
+    def __init__(self,name,nationality)
 
-print(Downstairs_EIT.GetSchool())
-print(All_Fellows.HasEaten())
+AllFellows = Fellows("Andrew","USA","False","No","Yes")
+
+print(AllFellows.GetFellows())
+
